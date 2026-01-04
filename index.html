@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DARKEMPEROR</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            --primary-glow: #00f2ff;
+            --secondary-glow: #0062ff;
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            background: #020406;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .main-container {
+            min-height: 100vh;
+            background-image:
+            linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+            url('https://i.ibb.co/Nd910BMZ/bg-jpg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .neon-title {
+            background: linear-gradient(to bottom, #fff 30%, #a5a5a5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
+            letter-spacing: -2px;
+        }
+
+        .glass-btn {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            transition: 0.5s;
+        }
+
+        .glass-btn:hover::before {
+            left: 100%;
+        }
+
+        .glass-btn:hover {
+            border-color: var(--primary-glow);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+            transform: scale(1.05);
+            color: var(--primary-glow);
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .float-anim {
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        .logo-frame {
+            border: 2px solid rgba(255,255,255,0.1);
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            transition: 0.3s;
+        }
+
+        .logo-frame:hover {
+            border-color: var(--primary-glow);
+        }
+
+        /* สไตล์ปุ่ม Admin ใหม่ */
+        .admin-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            color: #9ca3af;
+        }
+
+        .admin-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary-glow);
+            color: #fff;
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="main-container flex flex-col items-center">
+
+    <nav class="w-full max-w-6xl flex justify-between items-center px-8 py-8 z-20">
+        <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full overflow-hidden logo-frame">
+                <img src="https://i.ibb.co/p6809NG2/logo-jpg.jpg" class="w-full h-full object-cover" alt="Logo">
+            </div>
+            <span class="text-xl font-black tracking-tighter italic">
+                DARKEMPEROR
+            </span>
+        </div>
+
+        <a href="login.php" class="admin-btn">
+            Admin Access
+        </a>
+    </nav>
+
+    <main class="flex-1 flex flex-col items-center justify-center px-6 text-center z-10">
+
+        <div class="float-anim mb-6">
+            <span class="px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-[#00f2ff] text-[10px] font-bold tracking-[0.3em] uppercase">
+                EST. 2026 • EMPEROR COMMUNITY
+            </span>
+        </div>
+
+        <h1 class="neon-title text-7xl md:text-9xl font-black mb-6 uppercase">
+            DARKEMPEROR
+        </h1>
+
+        <p class="text-gray-400 max-w-lg leading-relaxed text-sm md:text-base font-light tracking-wide">
+            รวมรายชื่อคนใน <span class="text-white font-medium">DARKEMPEROR</span>
+        </p>
+
+        <div class="mt-12 flex flex-col md:flex-row gap-6">
+            <a href="EMPEROR.php" class="glass-btn px-10 py-4 rounded-xl font-bold tracking-widest text-sm uppercase">
+                LIST NAME
+            </a>
+            <a href="#" class="px-10 py-4 rounded-xl font-bold tracking-widest text-sm uppercase bg-white text-black hover:bg-[#00f2ff] transition">
+                JOIN COMMUNITY
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="w-full py-8 text-center text-[10px] text-gray-600 tracking-[0.5em] uppercase">
+        CREATE © 2026 DARKEMPEROR
+    </footer>
+
+</div>
+
+</body>
+</html>
